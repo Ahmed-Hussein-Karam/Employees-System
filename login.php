@@ -20,4 +20,5 @@ if(isset($_SESSION['email'])) { //already logged in
     }
 }
 
+mysqli_close($db_connection);
 ?>

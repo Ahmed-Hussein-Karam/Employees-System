@@ -3,9 +3,9 @@
 $db_connection = mysqli_connect("localhost", "root", "34235476aH_95.");
 
 if(!$db_connection) {
-    die("Error connecting to the database: <br />" .
-        "Error Number: " . mysqli_connect_errno() . "<br />" . 
-        "Error Message: " . mysqli_connect_error()
+    die("<h2>Database error</h2>" .
+        "<b>Error Number:</b> " . mysqli_connect_errno() . "<br />" . 
+        "<b>Error Message:</b> " . mysqli_connect_error()
     );
 }
 

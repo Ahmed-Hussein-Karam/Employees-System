@@ -6,15 +6,24 @@ if(! $_POST["full-name"] || ! $_POST["email"] || ! $_POST["mobile"] || ! $_POST[
     die ("<b>Error:</b> Missing employee data");
 }
 
-$query = "INSERT INTO Employees (Name, Email, Mobile, HiringDate) VALUES ('" .
+$query = "INSERT INTO Employees (Name, Email, Mobile, HireDate) VALUES ('" .
          $_POST["full-name"] . "', '" . $_POST["email"] . "', '" .
          $_POST["mobile"] . "', '" . $_POST["hiring-date"] . "')";
 
-if(mysqli_affected_rows($db_connection) == 0) {
-    echo "Error";
+if ($db_connection -> query($query) === True) {
+    include "home.php";
+    die ();
 } else {
-    include "home.html";
+    echo "<h2>Database error</h2>" .
+         "<b>Error:</b> " . $db_connection->error . "<br />";
 }
 
-
+mysqli_close($db_connection);
 ?>
+
+<!--In case of database error-->
+<html>
+    <body>
+        <a href="home.php">Back</a>
+    </body>
+</html>
