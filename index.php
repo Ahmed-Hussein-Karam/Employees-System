@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/index.css">
     </head>
 
     <body>
@@ -15,11 +16,14 @@
             }
         ?>
 
-        <form id="iform-login">
-            <input id="iinp-email" class="form-control" type="email" placeholder="email" name="email" required />
-            <input id="iinp-password" class="form-control" type="password" placeholder="password" name="password" required />
-            <input class="form-control btn-primary" type="submit" value="Login" />
-        </form>
+        <div class="container">
+            <h2>Login</h2>
+            <form id="iform-login">
+                <input id="iinp-email" class="form-control" type="email" placeholder="email" name="email" required />
+                <input id="iinp-password" class="form-control" type="password" placeholder="password" name="password" required />
+                <input class="form-control btn-primary" type="submit" value="Login" />
+            </form>
+        </div>
 
         <script src="javascript/jquery.js"></script>
         <script src="javascript/bootstrap.js"></script>

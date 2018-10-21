@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/employee-form.css">
     </head>
 
     <body>
@@ -23,7 +24,7 @@
 
             $employee = $query_result -> fetch_assoc();
 
-            echo "<h2>Update employee data</h2>" .
+            echo "<div class='container'><h2>Update employee data</h2>" .
                 "<form id='iform-edit-employee'>" .
                 "<label>Full Name: </label><input id='iinp-full-name' class='form-control' type='text' name='full-name' value='" .
                 $employee['Name'] ."' required/>" .
@@ -33,7 +34,7 @@
                 $employee['Mobile'] ."' required/>" .
                 "<label>Hiring date: </label><input id='iinp-hire-date' type='date' name='hiring-date' value='" .
                 $employee['HireDate'] ."' required/>" .
-                "<input class='form-control btn-primary' type='submit' value='Save changes' /></form>";
+                "<input class='form-control btn-primary' type='submit' value='Save changes' /></form></div>";
 
             mysqli_close($db_connection);
         ?>

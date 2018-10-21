@@ -1,0 +1,12 @@
+label {
+    display: block;
+}
+
+h2 {
+    padding-bottom: 3rem;
+}
+
+input {
+    max-width: 25%;
+    margin-bottom: 2rem;
+}

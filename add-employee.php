@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/employee-form.css">
     </head>
 
     <body>
@@ -15,14 +16,16 @@
             include_once "navbar.html";
         ?>
 
-        <h2>Add an employee</h2>
-        <form id="iform-add-employee">
-            <label>Full Name: </label><input id="iinp-name" class="form-control" type="text" required/>
-            <label>Email: </label><input id="iinp-email" class="form-control" type="email" required />
-            <label>Mobile: </label><input id="iinp-mobile" class="form-control" type="tel" required />
-            <label>Hiring date: </label><input id="iinp-date" type="date" required />
-            <input class="form-control btn-primary" type="submit" value="Add Employee" />
-        </form>
+        <div class="container">
+            <h2>Add an employee</h2>
+            <form id="iform-add-employee">
+                <label>Full Name: </label><input id="iinp-name" class="form-control" type="text" required/>
+                <label>Email: </label><input id="iinp-email" class="form-control" type="email" required />
+                <label>Mobile: </label><input id="iinp-mobile" class="form-control" type="tel" required />
+                <label>Hiring date: </label><input id="iinp-date" type="date" required />
+                <input class="form-control btn-primary" type="submit" value="Add Employee" />
+            </form>
+        </div>
 
         <script src="javascript/jquery.js"></script>
         <script src="javascript/bootstrap.js"></script>
