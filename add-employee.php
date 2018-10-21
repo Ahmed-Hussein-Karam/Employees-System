@@ -1,29 +1,32 @@
-<?php
-
-include_once "db-connect.php";
-
-if(! $_POST["full-name"] || ! $_POST["email"] || ! $_POST["mobile"] || ! $_POST["hiring-date"]) {
-    die ("<b>Error:</b> Missing employee data");
-}
-
-$query = "INSERT INTO Employees (Name, Email, Mobile, HireDate) VALUES ('" .
-         $_POST["full-name"] . "', '" . $_POST["email"] . "', '" .
-         $_POST["mobile"] . "', '" . $_POST["hiring-date"] . "')";
-
-if ($db_connection -> query($query) === True) {
-    include "home.php";
-    die ();
-} else {
-    echo "<h2>Database error</h2>" .
-         "<b>Error:</b> " . $db_connection->error . "<br />";
-}
-
-mysqli_close($db_connection);
-?>
-
-<!--In case of database error-->
 <html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </head>
+
     <body>
-        <a href="home.php">Back</a>
+        <?php
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            if(! isset($_SESSION["email"])) {
+                die ("<b>Error:</b> You must login first to view this page");
+            }
+
+            include_once "navbar.html";
+        ?>
+
+        <h2>Add an employee</h2>
+        <form id="iform-add-employee">
+            <label>Full Name: </label><input id="iinp-name" class="form-control" type="text" required/>
+            <label>Email: </label><input id="iinp-email" class="form-control" type="email" required />
+            <label>Mobile: </label><input id="iinp-mobile" class="form-control" type="tel" required />
+            <label>Hiring date: </label><input id="iinp-date" type="date" required />
+            <input class="form-control btn-primary" type="submit" value="Add Employee" />
+        </form>
+
+        <script src="javascript/jquery.js"></script>
+        <script src="javascript/bootstrap.js"></script>
+        <script src="javascript/logout.js"></script>
+        <script src="javascript/add-employee.js"></script>
     </body>
 </html>
