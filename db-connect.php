@@ -1,6 +1,6 @@
 <?php 
 
-$db_connection = mysqli_connect("localhost", "root", "34235476aH_95.");
+$db_connection = mysqli_connect("localhost", "<USERNAME_HERE>", "<PASSWORD_HERE>");
 
 if(!$db_connection) {
     die("<h2>Database error</h2>" .
