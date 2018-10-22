@@ -16,21 +16,23 @@
 
             include_once "navbar.html";
         ?>
-
-        <h2>Employees list</h2>
-        <div class="container-fluid">
-            <table id="itbl-employees" class="table table-striped table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Employee name</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="itbl-body-employees"></tbody>
-            </table>
-        </div><hr />
+        
+        <div class="container">
+            <h2>Employees list</h2><br />
+            <div class="container-fluid">
+                <table id="itbl-employees" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Employee name</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="itbl-body-employees"></tbody>
+                </table>
+            </div>
+        </div>
 
         <script src="javascript/jquery.js"></script>
         <script src="javascript/bootstrap.js"></script>

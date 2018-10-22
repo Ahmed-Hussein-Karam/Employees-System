@@ -54,7 +54,8 @@ function listEmployees() {
     while($employee = $query_result -> fetch_assoc()){
         echo "<tr><td>" . $employee['Name'] .
              "</td><td><a href='edit-employee.php?employee-id=" . $employee['ID'] . "'>Details</a>" .
-             "</td><td><a href='#' onclick='getEmployee(" . $employee['ID'] . ")'>Attendance</a>" .
+             "</td><td><a href='employee-attendance.php?employee-id=" . $employee['ID'] . "&full-name=" .
+             $employee['Name'] . "'>Attendance</a>" .
              "</td><td><a href='#' onclick='deleteEmployee(" . $employee['ID'] . ")'>Delete</a>" .
              "</td></tr>";
     }

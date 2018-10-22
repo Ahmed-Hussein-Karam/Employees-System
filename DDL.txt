@@ -21,12 +21,12 @@ CREATE TABLE StatusTypes (
 CREATE TABLE Attendance (
     Day Date,
     EmployeeID Integer,
-    StatusTypeID Integer,
-    WorkingHours Integer,
+    StatusTypeID Integer NOT NULL,
+    WorkingHours Integer NOT NULL DEFAULT 0,
     
     PRIMARY KEY (EmployeeID, Day),
-    FOREIGN KEY (EmployeeID) REFERENCES Employees (ID),
-    FOREIGN KEY (StatusTypeID) REFERENCES StatusTypes (ID)
+    FOREIGN KEY (EmployeeID) REFERENCES Employees (ID) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (StatusTypeID) REFERENCES StatusTypes (ID) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 INSERT INTO statustypes (Type) VALUES ('Present'), ('Absent'), ('Sick Leave'), ('Day OFF');
